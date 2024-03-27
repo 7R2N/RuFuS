@@ -1,0 +1,51 @@
+---
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>{title}</title> <!-- makes title dynamic -->
+    </head>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="products">Products</a>
+        <a href="contact">Contact</a>
+        <a href="about">About</a>
+    </div> 
+    <body>
+        <slot></slot>
+    </body>
+</html>
+
+<style class="topnav" id="topnav">
+    
+    .topnav {
+      display: flex;
+      justify-content: center;
+      border-radius: 25px;
+      background-color: #f16200; /*e15c00*/
+      overflow: hidden;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #e9994e;
+      color: black;
+    }
+
+    @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child){
+                display: none;
+            }
+        }
+
+</style>
